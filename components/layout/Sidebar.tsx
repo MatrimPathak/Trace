@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
@@ -8,7 +9,6 @@ import {
   ListTodo,
   Search,
   Settings,
-  BookOpen,
   Bug,
   Lightbulb,
   Layers,
@@ -63,9 +63,7 @@ function SidebarContent({ onClose }: SidebarContentProps) {
       {/* Brand */}
       <div className="flex h-14 items-center justify-between border-b border-sidebar-border px-5">
         <div className="flex items-center gap-2.5">
-          <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary/15">
-            <BookOpen className="h-3.5 w-3.5 text-primary" />
-          </div>
+          <Image src="/trace-logo.png" alt="Trace" width={28} height={28} className="rounded-lg" />
           <span className="text-sm font-semibold tracking-tight text-sidebar-foreground">Trace</span>
         </div>
         {onClose && (
